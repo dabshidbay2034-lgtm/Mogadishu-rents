@@ -1,0 +1,178 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Brand palette: Mogadishu Rents logo gold #D6A23E as primary */
+    --background: 0 0% 100%;
+    --foreground: 170 12% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 170 12% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 170 12% 10%;
+
+    --primary: 40 65% 54%;          /* logo gold  #D6A23E */
+    --primary-foreground: 170 12% 8%; /* dark ink  #16201F */
+
+    --secondary: 170 10% 14%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 40 20% 96%;
+    --muted-foreground: 40 5% 46%;
+
+    --accent: 32 88% 52%;           /* warm amber, one step warmer than gold */
+    --accent-foreground: 170 12% 8%;
+
+    --destructive: 4 86% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 40 15% 88%;
+    --input: 40 15% 88%;
+    --ring: 40 65% 54%;
+
+    --radius: 0.875rem;
+
+    --success: 152 55% 40%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 170 12% 8%;
+
+    --info: 217 80% 56%;
+    --info-foreground: 0 0% 100%;
+
+    --hotel: 271 50% 56%;
+    --hotel-foreground: 0 0% 100%;
+
+    --font-heading: 'Plus Jakarta Sans', sans-serif;
+    --font-body: 'Inter', sans-serif;
+
+    --shadow-card: 0 2px 12px -4px hsl(40 30% 20% / 0.10), 0 1px 3px hsl(40 30% 20% / 0.06);
+    --shadow-elevated: 0 24px 56px -16px hsl(40 65% 30% / 0.22), 0 8px 22px -10px hsl(40 30% 20% / 0.12);
+    --shadow-glow: 0 0 28px hsl(40 65% 54% / 0.40);
+
+    --gradient-hero: linear-gradient(135deg, hsl(40 70% 36%) 0%, hsl(38 80% 48%) 50%, hsl(32 88% 55%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(40 65% 54%) 0%, hsl(32 88% 52%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(40 30% 98%) 100%);
+
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 170 12% 10%;
+    --sidebar-primary: 40 65% 54%;
+    --sidebar-primary-foreground: 170 12% 8%;
+    --sidebar-accent: 40 20% 96%;
+    --sidebar-accent-foreground: 170 12% 10%;
+    --sidebar-border: 40 15% 88%;
+    --sidebar-ring: 40 65% 54%;
+    --chart-1: 40 65% 54%;
+    --chart-2: 32 88% 52%;
+    --chart-3: 175 50% 40%;
+    --chart-4: 240 4% 60%;
+    --chart-5: 240 6% 30%;
+    --sidebar: 0 0% 100%;
+    --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
+    --font-serif: 'Lora', ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif;
+    --font-mono: 'Space Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+    --shadow-2xs: 0 1px 3px 0px hsl(20 30% 10% / 0.05);
+    --shadow-xs: 0 1px 3px 0px hsl(20 30% 10% / 0.05);
+    --shadow-sm: 0 1px 3px 0px hsl(20 30% 10% / 0.08), 0 1px 2px -1px hsl(20 30% 10% / 0.08);
+    --shadow: 0 1px 3px 0px hsl(20 30% 10% / 0.08), 0 1px 2px -1px hsl(20 30% 10% / 0.08);
+    --shadow-md: 0 2px 6px 0px hsl(20 30% 10% / 0.08), 0 2px 4px -1px hsl(20 30% 10% / 0.08);
+    --shadow-lg: 0 4px 10px 0px hsl(20 30% 10% / 0.10), 0 4px 6px -1px hsl(20 30% 10% / 0.08);
+    --shadow-xl: 0 12px 28px 0px hsl(20 30% 10% / 0.12), 0 8px 10px -1px hsl(20 30% 10% / 0.08);
+    --shadow-2xl: 0 24px 48px 0px hsl(20 30% 10% / 0.20);
+    --tracking-normal: 0em;
+    --spacing: 0.25rem;
+  }
+  .dark {
+    --background: 170 10% 8%;
+    --foreground: 40 20% 94%;
+    --card: 170 8% 12%;
+    --card-foreground: 40 20% 94%;
+    --popover: 170 8% 12%;
+    --popover-foreground: 40 20% 94%;
+    --primary: 40 70% 62%;          /* lighter gold for dark backgrounds */
+    --primary-foreground: 170 12% 8%;
+    --secondary: 170 8% 20%;
+    --secondary-foreground: 40 20% 94%;
+    --muted: 170 8% 18%;
+    --muted-foreground: 40 10% 62%;
+    --accent: 32 88% 58%;
+    --accent-foreground: 170 12% 8%;
+    --destructive: 4 86% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 170 8% 22%;
+    --input: 170 8% 22%;
+    --ring: 40 70% 62%;
+    --chart-1: 40 70% 62%;
+    --chart-2: 32 88% 58%;
+    --chart-3: 175 45% 50%;
+    --chart-4: 40 10% 62%;
+    --chart-5: 40 20% 84%;
+    --sidebar: 170 8% 12%;
+    --sidebar-foreground: 40 20% 94%;
+    --sidebar-primary: 40 70% 62%;
+    --sidebar-primary-foreground: 170 12% 8%;
+    --sidebar-accent: 170 8% 20%;
+    --sidebar-accent-foreground: 40 20% 94%;
+    --sidebar-border: 170 8% 22%;
+    --sidebar-ring: 40 70% 62%;
+    --shadow-2xs: 0 1px 3px 0px hsl(0 0% 0% / 0.05);
+    --shadow-xs: 0 1px 3px 0px hsl(0 0% 0% / 0.05);
+    --shadow-sm: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 1px 2px -1px hsl(0 0% 0% / 0.1);
+    --shadow: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 1px 2px -1px hsl(0 0% 0% / 0.1);
+    --shadow-md: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 2px 4px -1px hsl(0 0% 0% / 0.1);
+    --shadow-lg: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 4px 6px -1px hsl(0 0% 0% / 0.1);
+    --shadow-xl: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 8px 10px -1px hsl(0 0% 0% / 0.1);
+    --shadow-2xl: 0 1px 3px 0px hsl(0 0% 0% / 0.25);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-body);
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    background: var(--gradient-accent);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .bg-hero {
+    background: var(--gradient-hero);
+  }
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+  .shadow-elevated {
+    box-shadow: var(--shadow-elevated);
+  }
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
