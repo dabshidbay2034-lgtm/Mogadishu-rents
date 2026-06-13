@@ -78,12 +78,12 @@ const DistrictSection = () => {
                     <div className="absolute inset-0 bg-gradient-to-t from-foreground/75 via-foreground/15 to-transparent" />
                     <div className="absolute inset-0 bg-gradient-to-t from-primary/25 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     <div className="absolute bottom-0 left-0 right-0 p-3">
-                      <div className="flex items-center gap-1 mb-0.5">
-                        <MapPin className="w-3 h-3 text-primary-foreground/70" />
+                      <div className="inline-flex items-center gap-1.5 bg-white/90 backdrop-blur-sm rounded-lg px-2.5 py-1.5 shadow-sm">
+                        <MapPin className="w-3 h-3 text-primary shrink-0" />
+                        <h3 className="text-xs md:text-sm font-heading font-bold text-gray-900 leading-tight">
+                          {district}
+                        </h3>
                       </div>
-                      <h3 className="text-sm md:text-base font-heading font-bold text-primary-foreground leading-tight">
-                        {district}
-                      </h3>
                     </div>
                   </motion.div>
                 );

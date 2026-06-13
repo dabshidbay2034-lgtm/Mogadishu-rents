@@ -71,9 +71,7 @@ const SignUp = () => {
       provider: "google",
       options: {
         redirectTo: window.location.origin,
-        queryParams: {
-          role: selectedRole,
-        },
+        queryParams: { role: selectedRole },
       },
     });
     if (error) {
@@ -139,8 +137,8 @@ const SignUp = () => {
             <div className="w-12 h-12 rounded-xl bg-accent flex items-center justify-center mx-auto mb-4">
               <span className="text-accent-foreground font-heading font-bold text-lg">MR</span>
             </div>
-             <h1 className="text-2xl font-heading font-bold text-foreground mb-1">
-               {step === "role" ? "How will you use Mogadishu Rents?" : "Create Account"}
+            <h1 className="text-2xl font-heading font-bold text-foreground mb-1">
+              {step === "role" ? "How will you use Mogadishu Rents?" : "Create Account"}
             </h1>
             <p className="text-muted-foreground text-sm">
               {step === "role" ? "Choose your role — you can change it later" : `Signing up as ${currentRole.label}`}
@@ -207,7 +205,7 @@ const SignUp = () => {
 
                 <div className="space-y-2">
                   <Label htmlFor="phone" className="text-xs font-medium text-muted-foreground">
-                    Primary Contact Number <span className="text-destructive">*</span>
+                    Contact Number <span className="text-destructive">*</span>
                   </Label>
                   <div className="relative">
                     <Phone className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
@@ -223,39 +221,43 @@ const SignUp = () => {
                   </div>
                 </div>
 
-                <div className="space-y-2">
-                  <Label htmlFor="phone2" className="text-xs font-medium text-muted-foreground">
-                    Second Contact Number <span className="text-muted-foreground/60">(optional)</span>
-                  </Label>
-                  <div className="relative">
-                    <Phone className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
-                    <Input
-                      id="phone2"
-                      type="tel"
-                      placeholder="+252 61 xxx xxxx"
-                      value={phone2}
-                      onChange={(e) => setPhone2(e.target.value)}
-                      className="pl-10 h-12 rounded-xl"
-                    />
-                  </div>
-                </div>
+                {selectedRole !== "user" && (
+                  <>
+                    <div className="space-y-2">
+                      <Label htmlFor="phone2" className="text-xs font-medium text-muted-foreground">
+                        Second Contact <span className="text-muted-foreground/60">(optional)</span>
+                      </Label>
+                      <div className="relative">
+                        <Phone className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
+                        <Input
+                          id="phone2"
+                          type="tel"
+                          placeholder="+252 61 xxx xxxx"
+                          value={phone2}
+                          onChange={(e) => setPhone2(e.target.value)}
+                          className="pl-10 h-12 rounded-xl"
+                        />
+                      </div>
+                    </div>
 
-                <div className="space-y-2">
-                  <Label htmlFor="phone3" className="text-xs font-medium text-muted-foreground">
-                    Third Contact Number <span className="text-muted-foreground/60">(optional)</span>
-                  </Label>
-                  <div className="relative">
-                    <Phone className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
-                    <Input
-                      id="phone3"
-                      type="tel"
-                      placeholder="+252 61 xxx xxxx"
-                      value={phone3}
-                      onChange={(e) => setPhone3(e.target.value)}
-                      className="pl-10 h-12 rounded-xl"
-                    />
-                  </div>
-                </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="phone3" className="text-xs font-medium text-muted-foreground">
+                        Third Contact <span className="text-muted-foreground/60">(optional)</span>
+                      </Label>
+                      <div className="relative">
+                        <Phone className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
+                        <Input
+                          id="phone3"
+                          type="tel"
+                          placeholder="+252 61 xxx xxxx"
+                          value={phone3}
+                          onChange={(e) => setPhone3(e.target.value)}
+                          className="pl-10 h-12 rounded-xl"
+                        />
+                      </div>
+                    </div>
+                  </>
+                )}
 
                 <div className="space-y-2">
                   <Label htmlFor="email" className="text-xs font-medium text-muted-foreground">Email</Label>
@@ -301,7 +303,6 @@ const SignUp = () => {
                 </Button>
               </form>
 
-              {/* Google Sign Up - shown after role selection */}
               <div className="relative my-5">
                 <div className="absolute inset-0 flex items-center">
                   <span className="w-full border-t border-border" />
@@ -310,6 +311,7 @@ const SignUp = () => {
                   <span className="bg-background px-2 text-muted-foreground">or</span>
                 </div>
               </div>
+
               <Button
                 type="button"
                 variant="outline"

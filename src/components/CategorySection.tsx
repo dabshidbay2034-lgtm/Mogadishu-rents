@@ -83,17 +83,17 @@ const CategorySection = () => {
                   <div className="w-8 h-8 md:w-9 md:h-9 rounded-xl bg-card/90 backdrop-blur-sm flex items-center justify-center shadow-sm">
                     <cat.icon className="w-4 h-4 md:w-[18px] md:h-[18px] text-primary" />
                   </div>
-                  <span className="text-[9px] md:text-[10px] uppercase tracking-widest text-primary-foreground/70 font-bold">
+                  <span className="text-[9px] md:text-[10px] uppercase tracking-widest text-white/70 font-bold">
                     {cat.pricing}
                   </span>
                 </div>
-                <h3 className="text-base md:text-xl font-heading font-bold text-primary-foreground mb-0.5 md:mb-1">{cat.title}</h3>
-                <p className="text-primary-foreground/65 text-xs md:text-sm mb-2 md:mb-3 hidden sm:block">{cat.desc}</p>
+                <h3 className="text-base md:text-xl font-heading font-bold text-white mb-0.5 md:mb-1">{cat.title}</h3>
+                <p className="text-white/65 text-xs md:text-sm mb-2 md:mb-3 hidden sm:block">{cat.desc}</p>
                 <div className="inline-flex items-center gap-1.5 text-xs md:text-sm font-bold text-foreground bg-card/90 backdrop-blur-sm rounded-full px-3 py-1.5 group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
                   Explore <ArrowRight className="w-3.5 h-3.5 md:w-4 md:h-4 group-hover:translate-x-0.5 transition-transform" />
                 </div>
                 {cat.elevator && (
-                  <div className="mt-2 text-[11px] md:text-xs text-primary-foreground/80 font-medium flex items-center gap-1">
+                  <div className="mt-2 text-[11px] md:text-xs text-white/80 font-medium flex items-center gap-1">
                     <span role="img" aria-label="Elevator">🛗</span> Elevator available
                   </div>
                 )}

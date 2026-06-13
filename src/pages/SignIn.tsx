@@ -18,30 +18,20 @@ const SignIn = () => {
   const handleSignIn = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-
     try {
       const { error } = await supabase.auth.signInWithPassword({ email, password });
-
       if (error) {
-        // Provide more specific error messages based on error type
-        let errorMessage = error.message;
-
-        if (error.message.includes('Invalid login credentials')) {
-          errorMessage = 'Invalid email or password. Please check your credentials and try again.';
-        } else if (error.message.includes('Email not confirmed')) {
-          errorMessage = 'Please check your email and click the confirmation link before signing in.';
-        } else if (error.message.includes('Too many requests')) {
-          errorMessage = 'Too many sign-in attempts. Please wait a few minutes before trying again.';
-        } else if (error.message.includes('User not found')) {
-          errorMessage = 'No account found with this email address.';
-        }
-
-        toast.error(errorMessage);
+        let msg = error.message;
+        if (msg.includes("Invalid login credentials")) msg = "Invalid email or password. Please check your credentials and try again.";
+        else if (msg.includes("Email not confirmed")) msg = "Please check your email and click the confirmation link before signing in.";
+        else if (msg.includes("Too many requests")) msg = "Too many sign-in attempts. Please wait a few minutes before trying again.";
+        else if (msg.includes("User not found")) msg = "No account found with this email address.";
+        toast.error(msg);
       } else {
         toast.success("Welcome back!");
         navigate("/");
       }
-    } catch (err) {
+    } catch {
       toast.error("An unexpected error occurred. Please try again.");
     } finally {
       setLoading(false);
@@ -52,9 +42,7 @@ const SignIn = () => {
     setGoogleLoading(true);
     const { error } = await supabase.auth.signInWithOAuth({
       provider: "google",
-      options: {
-        redirectTo: window.location.origin,
-      },
+      options: { redirectTo: window.location.origin },
     });
     if (error) {
       toast.error(error.message);
